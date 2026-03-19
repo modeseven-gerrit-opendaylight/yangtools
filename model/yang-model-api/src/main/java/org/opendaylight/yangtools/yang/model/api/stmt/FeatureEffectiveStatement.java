@@ -16,7 +16,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of a {@code feature} statement.
  */
 public interface FeatureEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<QName, @NonNull FeatureStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<QName, @NonNull FeatureStatement>,
+                ReferenceEffectiveStatement.OptionalIn<QName, @NonNull FeatureStatement> {
     @Override
     default StatementDefinition<QName, @NonNull FeatureStatement, ?> statementDefinition() {
         return FeatureStatement.DEF;

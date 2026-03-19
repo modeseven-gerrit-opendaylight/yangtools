@@ -14,7 +14,9 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
 /**
  * Effective representation of a {@code uses} statement.
  */
-public interface UsesEffectiveStatement extends ReferenceEffectiveStatement.OptionalIn<QName, @NonNull UsesStatement> {
+public interface UsesEffectiveStatement
+        extends DescriptionEffectiveStatement.OptionalIn<QName, @NonNull UsesStatement>,
+                ReferenceEffectiveStatement.OptionalIn<QName, @NonNull UsesStatement> {
     @Override
     default StatementDefinition<QName, @NonNull UsesStatement, ?> statementDefinition() {
         return UsesStatement.DEF;

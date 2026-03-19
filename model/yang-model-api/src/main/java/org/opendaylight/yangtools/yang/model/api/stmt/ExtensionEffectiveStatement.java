@@ -16,7 +16,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of an {@code extension} statement.
  */
 public interface ExtensionEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<QName, @NonNull ExtensionStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<QName, @NonNull ExtensionStatement>,
+                ReferenceEffectiveStatement.OptionalIn<QName, @NonNull ExtensionStatement> {
     @Override
     default StatementDefinition<QName, @NonNull ExtensionStatement, ?> statementDefinition() {
         return ExtensionStatement.DEF;

@@ -24,6 +24,7 @@ import org.opendaylight.yangtools.yang.common.UnresolvedQName.Unqualified;
 @Beta
 public sealed interface RootEffectiveStatement<D extends RootDeclaredStatement>
         extends ContactEffectiveStatement.OptionalIn<Unqualified, D>,
+                DescriptionEffectiveStatement.OptionalIn<Unqualified, D>,
                 ImportEffectiveStatement.MultipleIn<Unqualified, D>,
                 ReferenceEffectiveStatement.OptionalIn<Unqualified, D>
         permits ModuleEffectiveStatement, SubmoduleEffectiveStatement {

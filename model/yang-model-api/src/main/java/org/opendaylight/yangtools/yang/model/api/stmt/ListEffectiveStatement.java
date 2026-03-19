@@ -20,6 +20,7 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  */
 public non-sealed interface ListEffectiveStatement extends DataTreeEffectiveStatement<@NonNull ListStatement>,
         DataTreeAwareEffectiveStatement<QName, @NonNull ListStatement>,
+        DescriptionEffectiveStatement.OptionalIn<QName, @NonNull ListStatement>,
         KeyEffectiveStatement.OptionalIn<QName, @NonNull ListStatement>,
         MaxElementsEffectiveStatement.OptionalIn<QName, @NonNull ListStatement>,
         MinElementsEffectiveStatement.OptionalIn<QName, @NonNull ListStatement>,

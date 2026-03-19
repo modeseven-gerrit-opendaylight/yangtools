@@ -15,7 +15,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
 /**
  * Effective representation of a {@code bit} statement.
  */
-public interface BitEffectiveStatement extends ReferenceEffectiveStatement.OptionalIn<String, @NonNull BitStatement> {
+public interface BitEffectiveStatement extends DescriptionEffectiveStatement.OptionalIn<String, @NonNull BitStatement>,
+        ReferenceEffectiveStatement.OptionalIn<String, @NonNull BitStatement> {
     @Override
     default StatementDefinition<String, @NonNull BitStatement, ?> statementDefinition() {
         return BitStatement.DEF;

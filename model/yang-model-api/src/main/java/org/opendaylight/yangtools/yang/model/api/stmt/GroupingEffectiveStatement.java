@@ -17,8 +17,9 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of a {@code grouping} statement.
  */
 public interface GroupingEffectiveStatement extends DataTreeAwareEffectiveStatement<QName, @NonNull GroupingStatement>,
-        TypedefEffectiveStatement.MultipleIn<QName, @NonNull GroupingStatement>,
+        DescriptionEffectiveStatement.OptionalIn<QName, @NonNull GroupingStatement>,
         ReferenceEffectiveStatement.OptionalIn<QName, @NonNull GroupingStatement>,
+        TypedefEffectiveStatement.MultipleIn<QName, @NonNull GroupingStatement>,
         DataContainerCompat<QName, @NonNull GroupingStatement> {
     @Override
     default StatementDefinition<QName, @NonNull GroupingStatement, ?> statementDefinition() {

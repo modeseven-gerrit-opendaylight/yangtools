@@ -19,6 +19,7 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  */
 public non-sealed interface ActionEffectiveStatement extends SchemaTreeEffectiveStatement<@NonNull ActionStatement>,
         DataTreeAwareEffectiveStatement<QName, @NonNull ActionStatement>,
+        DescriptionEffectiveStatement.OptionalIn<QName, @NonNull ActionStatement>,
         InputEffectiveStatement.MandatoryIn<QName, @NonNull ActionStatement>,
         OutputEffectiveStatement.MandatoryIn<QName, @NonNull ActionStatement>,
         ReferenceEffectiveStatement.OptionalIn<QName, @NonNull ActionStatement>,

@@ -25,7 +25,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.TypeDefinitionCompat;
  * hold one level of this namespace.
  */
 public interface TypedefEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<QName, @NonNull TypedefStatement>,
+        extends DescriptionEffectiveStatement.OptionalIn<QName, @NonNull TypedefStatement>,
+                ReferenceEffectiveStatement.OptionalIn<QName, @NonNull TypedefStatement>,
                 TypeDefinitionCompat<QName, @NonNull TypedefStatement> {
     /**
      * An {@link EffectiveStatement} that is a parent of multiple {@link TypedefEffectiveStatement}s.

@@ -15,7 +15,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of a {@code include} statement.
  */
 public interface IncludeEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<Unqualified, @NonNull IncludeStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<Unqualified, @NonNull IncludeStatement>,
+                ReferenceEffectiveStatement.OptionalIn<Unqualified, @NonNull IncludeStatement> {
     @Override
     default StatementDefinition<Unqualified, @NonNull IncludeStatement, ?> statementDefinition() {
         return IncludeStatement.DEF;

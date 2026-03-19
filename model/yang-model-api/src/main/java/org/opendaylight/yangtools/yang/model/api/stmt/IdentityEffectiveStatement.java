@@ -16,7 +16,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of a {@code identity} statement.
  */
 public interface IdentityEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<QName, @NonNull IdentityStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<QName, @NonNull IdentityStatement>,
+                ReferenceEffectiveStatement.OptionalIn<QName, @NonNull IdentityStatement> {
     @Override
     default StatementDefinition<QName, @NonNull IdentityStatement, ?> statementDefinition() {
         return IdentityStatement.DEF;

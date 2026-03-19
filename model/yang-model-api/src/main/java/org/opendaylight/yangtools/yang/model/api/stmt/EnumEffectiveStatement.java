@@ -13,7 +13,9 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
 /**
  * Effective representation of a {@code enum} statement.
  */
-public interface EnumEffectiveStatement extends ReferenceEffectiveStatement.OptionalIn<String, @NonNull EnumStatement> {
+public interface EnumEffectiveStatement
+        extends DescriptionEffectiveStatement.OptionalIn<String, @NonNull EnumStatement>,
+                ReferenceEffectiveStatement.OptionalIn<String, @NonNull EnumStatement> {
     @Override
     default StatementDefinition<String, @NonNull EnumStatement, ?> statementDefinition() {
         return EnumStatement.DEF;

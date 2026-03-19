@@ -15,7 +15,8 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Effective representation of a {@code revision} statement.
  */
 public interface RevisionEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<Revision, @NonNull RevisionStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<Revision, @NonNull RevisionStatement>,
+                ReferenceEffectiveStatement.OptionalIn<Revision, @NonNull RevisionStatement> {
     @Override
     default StatementDefinition<Revision, @NonNull RevisionStatement, ?> statementDefinition() {
         return RevisionStatement.DEF;

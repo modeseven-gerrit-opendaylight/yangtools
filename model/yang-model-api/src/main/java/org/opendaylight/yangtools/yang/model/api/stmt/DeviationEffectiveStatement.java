@@ -15,7 +15,8 @@ import org.opendaylight.yangtools.yang.model.api.stmt.SchemaNodeIdentifier.Absol
  * Effective representation of a {@code deviation} statement.
  */
 public interface DeviationEffectiveStatement
-        extends ReferenceEffectiveStatement.OptionalIn<Absolute, @NonNull DeviationStatement> {
+        extends DescriptionEffectiveStatement.OptionalIn<Absolute, @NonNull DeviationStatement>,
+                ReferenceEffectiveStatement.OptionalIn<Absolute, @NonNull DeviationStatement> {
     @Override
     default StatementDefinition<Absolute, @NonNull DeviationStatement, ?> statementDefinition() {
         return DeviationStatement.DEF;

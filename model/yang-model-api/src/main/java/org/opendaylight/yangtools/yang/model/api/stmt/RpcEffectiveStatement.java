@@ -17,6 +17,7 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  */
 public non-sealed interface RpcEffectiveStatement extends SchemaTreeEffectiveStatement<@NonNull RpcStatement>,
         DataTreeAwareEffectiveStatement<QName, @NonNull RpcStatement>,
+        DescriptionEffectiveStatement.OptionalIn<QName, @NonNull RpcStatement>,
         InputEffectiveStatement.MandatoryIn<QName, @NonNull RpcStatement>,
         OutputEffectiveStatement.MandatoryIn<QName, @NonNull RpcStatement>,
         ReferenceEffectiveStatement.OptionalIn<QName, @NonNull RpcStatement>,
