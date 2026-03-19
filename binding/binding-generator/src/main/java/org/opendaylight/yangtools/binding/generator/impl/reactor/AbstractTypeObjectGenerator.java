@@ -683,7 +683,6 @@ abstract class AbstractTypeObjectGenerator<S extends EffectiveStatement<?, ?>, R
         }
         builder.addConstant(Types.immutableSetTypeFor(Types.STRING), TypeConstants.VALID_NAMES_NAME, typedef);
 
-        // builder.setSchemaPath(typedef.getPath());
         builder.setModuleName(module.statement().argument().getLocalName());
         builderFactory.addCodegenInformation(typedef, builder);
         annotateDeprecatedIfNecessary(typedef, builder);
@@ -710,7 +709,6 @@ abstract class AbstractTypeObjectGenerator<S extends EffectiveStatement<?, ?>, R
     private static @NonNull GeneratedType createSimple(final TypeBuilderFactory builderFactory,
             final EffectiveStatement<?, ?> definingStatement, final JavaTypeName typeName, final ModuleGenerator module,
             final Type javaType, final TypeDefinition<?> typedef) {
-        final String moduleName = module.statement().argument().getLocalName();
         final var builder = builderFactory.newGeneratedTOBuilder(typeName);
         builder.setTypedef(true);
         builder.addImplementsType(BindingTypes.scalarTypeObject(javaType));
@@ -721,11 +719,8 @@ abstract class AbstractTypeObjectGenerator<S extends EffectiveStatement<?, ?>, R
         builder.addEqualsIdentity(genPropBuilder);
         builder.addHashIdentity(genPropBuilder);
         builder.addToStringProperty(genPropBuilder);
-
         builder.setRestrictions(getRestrictions(typedef));
-
-//        builder.setSchemaPath(typedef.getPath());
-        builder.setModuleName(moduleName);
+        builder.setModuleName(module.statement().argument().getLocalName());
         builderFactory.addCodegenInformation(typedef, builder);
 
         annotateDeprecatedIfNecessary(typedef, builder);
@@ -748,8 +743,6 @@ abstract class AbstractTypeObjectGenerator<S extends EffectiveStatement<?, ?>, R
         final var builder = builderFactory.newUnionTypeObjectBuilder(typeName);
         YangSourceDefinition.of(module.statement(), definingStatement).ifPresent(builder::setYangSourceDefinition);
         builder.addImplementsType(BindingTypes.UNION_TYPE_OBJECT);
-
-//        builder.setSchemaPath(typedef.getPath());
         builder.setModuleName(module.statement().argument().getLocalName());
         builderFactory.addCodegenInformation(definingStatement, builder);
 

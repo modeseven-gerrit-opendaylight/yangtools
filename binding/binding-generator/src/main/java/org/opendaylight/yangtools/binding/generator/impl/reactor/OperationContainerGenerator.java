@@ -76,12 +76,11 @@ abstract sealed class OperationContainerGenerator<S extends DataTreeEffectiveSta
         addConcreteInterfaceMethods(builder);
         addGetterMethods(builder, builderFactory);
 
-        final ModuleGenerator module = currentModule();
+        final var module = currentModule();
         module.addQNameConstant(builder, localName());
 
         annotateDeprecatedIfNecessary(builder);
         builderFactory.addCodegenInformation(module, statement(), builder);
-//                builder.setSchemaPath(schemaNode.getPath());
         builder.setModuleName(module.statement().argument().getLocalName());
 
         return builder.build();
