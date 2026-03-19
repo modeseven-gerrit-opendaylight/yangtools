@@ -20,6 +20,7 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  */
 public non-sealed interface LeafListEffectiveStatement extends DataTreeEffectiveStatement<@NonNull LeafListStatement>,
         OrderedByEffectiveStatement.OptionalIn<QName, @NonNull LeafListStatement>,
+        TypeEffectiveStatement.MandatoryIn<QName, @NonNull LeafListStatement>,
         DataSchemaCompat<QName, @NonNull LeafListStatement> {
     @Override
     default StatementDefinition<QName, @NonNull LeafListStatement, ?> statementDefinition() {
