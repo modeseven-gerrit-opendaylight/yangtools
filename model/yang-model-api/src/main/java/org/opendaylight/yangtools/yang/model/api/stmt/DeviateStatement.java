@@ -7,7 +7,10 @@
  */
 package org.opendaylight.yangtools.yang.model.api.stmt;
 
+import com.google.common.annotations.Beta;
+import java.util.Collection;
 import org.eclipse.jdt.annotation.NonNull;
+import org.opendaylight.yangtools.yang.common.Empty;
 import org.opendaylight.yangtools.yang.common.YangConstants;
 import org.opendaylight.yangtools.yang.model.api.DeviateKind;
 import org.opendaylight.yangtools.yang.model.api.meta.ArgumentDefinition;
@@ -18,6 +21,21 @@ import org.opendaylight.yangtools.yang.model.api.meta.StatementDefinition;
  * Declared representation of a {@code deviate} statement.
  */
 public interface DeviateStatement extends DeclaredStatement<DeviateKind> {
+    /**
+     * A {@link DeclaredStatement} that is a parent of multiple {@link DeviateStatement}s.
+     * @param <A> Argument type ({@link Empty} if statement does not have argument.)
+     * @since 15.0.1
+     */
+    @Beta
+    interface MultipleIn<A> extends DeclaredStatement<A> {
+        /**
+         * {@return all {@code DeviateStatement} substatements}
+         */
+        default @NonNull Collection<? extends @NonNull DeviateStatement> deviateStatements() {
+            return declaredSubstatements(DeviateStatement.class);
+        }
+    }
+
     /**
      * The definition of {@code deviate} statement.
      *

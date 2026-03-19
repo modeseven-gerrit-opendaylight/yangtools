@@ -16,6 +16,7 @@ import org.opendaylight.yangtools.yang.model.api.stmt.SchemaNodeIdentifier.Absol
  */
 public interface DeviationEffectiveStatement
         extends DescriptionEffectiveStatement.OptionalIn<Absolute, @NonNull DeviationStatement>,
+                DeviateEffectiveStatement.MultipleIn<Absolute, @NonNull DeviationStatement>,
                 ReferenceEffectiveStatement.OptionalIn<Absolute, @NonNull DeviationStatement> {
     @Override
     default StatementDefinition<Absolute, @NonNull DeviationStatement, ?> statementDefinition() {
