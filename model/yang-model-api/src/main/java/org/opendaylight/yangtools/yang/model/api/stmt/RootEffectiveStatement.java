@@ -26,6 +26,7 @@ public sealed interface RootEffectiveStatement<D extends RootDeclaredStatement>
         extends ContactEffectiveStatement.OptionalIn<Unqualified, D>,
                 DescriptionEffectiveStatement.OptionalIn<Unqualified, D>,
                 ImportEffectiveStatement.MultipleIn<Unqualified, D>,
+                OrganizationEffectiveStatement.OptionalIn<Unqualified, D>,
                 ReferenceEffectiveStatement.OptionalIn<Unqualified, D>
         permits ModuleEffectiveStatement, SubmoduleEffectiveStatement {
     /**

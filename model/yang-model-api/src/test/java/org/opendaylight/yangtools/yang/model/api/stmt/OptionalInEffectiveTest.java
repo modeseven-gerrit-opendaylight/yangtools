@@ -141,6 +141,7 @@ class OptionalInEffectiveTest {
             arguments(MaxElementsStatement.DEF),
             arguments(MinElementsStatement.DEF),
             arguments(OrderedByStatement.DEF),
+            arguments(OrganizationStatement.DEF),
             arguments(PresenceStatement.DEF),
             arguments(ReferenceStatement.DEF),
             arguments(UnitsStatement.DEF));
