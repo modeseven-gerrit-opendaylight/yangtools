@@ -43,10 +43,11 @@ final class GetFilterElementAttributesStatementSupport extends AbstractEmptyStat
     @Override
     public void onFullDefinitionDeclared(final Mutable<Empty, GetFilterElementAttributesStatement,
             GetFilterElementAttributesEffectiveStatement> stmt) {
-        super.onFullDefinitionDeclared(stmt);
         if (!computeSupported(stmt)) {
             stmt.setUnsupported();
+            return;
         }
+        super.onFullDefinitionDeclared(stmt);
     }
 
     @Override
